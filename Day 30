@@ -1,0 +1,49 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Basicinfo{
+    protected:
+        string name;
+        int id;
+        char gender;
+    public:
+        Basicinfo(){}
+};
+class ClassdeptInfo{
+    protected:
+        string deptname, assignedwork;
+        int time;
+    public:
+        ClassdeptInfo(){}
+};
+class Loan{
+    protected:
+        string details;
+        int amount;
+    public:
+        Loan(){}
+};
+class Employee:public Basicinfo, public ClassdeptInfo, public Loan{
+    public:
+        Employee(){}
+        void getdetails(){
+            cout<<"\nEnter name: "; cin>>name;
+            cout<<"Enter Emp. ID: "; cin>>id;
+            cout<<"Enter gender: "; cin>>gender;
+            cout<<"Enter department name: "; cin>>deptname;
+            cout<<"Enter assgned work: "; cin>>assignedwork;
+            cout<<"Enter time in hours to complete work: "; cin>>time;
+        }
+        void putdetails(){
+            cout<<"\nEmployee information is...:";
+            cout<<"\nName: "<<name;
+            cout<<"\nEmployee ID: "<<id;
+            cout<<"\nGender: "<<gender;
+        }
+};
+int main(){
+    Employee A;
+    A.getdetails();
+    A.putdetails();
+    return 0;
+}
